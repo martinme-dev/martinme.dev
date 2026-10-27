@@ -1,6 +1,6 @@
 ---
 title: 'How I work: a brain with repos inside'
-description: 'My working system: an Obsidian vault as a second brain, code repos living inside it, workstreams with a diary and documents, and AI as a pair. Published so I can refine it in the open.'
+description: 'My working system: an Obsidian vault as a second brain, code repos living inside it, workstreams with an index and lessons, sessions that end in a hand-off, and AI as a pair. Published so I can refine it in the open.'
 pubDate: '2026-10-15T03:45:00'
 ---
 
@@ -12,29 +12,40 @@ My base is an [Obsidian](https://obsidian.md) vault: my second brain. My code re
 
 Repos and ideas connect and develop together. I call the result 100x engineering. I can't measure the multiplier, but I can feel the difference.
 
-## Workstreams, each with a diary and documents
+## Workstreams, each with an index and lessons
 
-The structure I've landed on, for now:
+The structure I've landed on, for now. The first version of this page had a diary and documents; this is what survived contact with real work:
 
 ```text
-workstream/
-├── diary/
-│   └── week/
-│       └── day
-└── documents/
-    └── persistent references, notes, anything
+projects/
+├── 00-index.md         the map of every workstream
+└── NN-workstream/
+    ├── 00-index.md     what's true now: status, next step, history
+    ├── LESSONS.md      what we learned, one dated line each
+    └── documents       references, specs, research
 ```
 
-- **Diary:** what happened, day by day, grouped in weeks. Time-ordered. I build with a day-by-day philosophy: evolve a little, every day, and write it down.
+- **Index:** the one home for where a workstream stands. A fact that lives in two places drifts into two facts, so each fact gets one home.
+- **Lessons:** every improvement is written down the day it's learned, so the next project starts where the last one ended.
 - **Documents:** what should stay true beyond any single week. Reference documents, business rules, notes. A local mirror of the repos, organized by workstream instead of by codebase.
 
 It's the same idea as the [two caching lanes](/writings/how-i-deployed-martinme-dev/#six-months-later-what-the-setup-missed) on this site: separate what changes every day from what should stay stable, and treat each one accordingly.
+
+## Sessions think, files remember
+
+An AI session has a working memory, and it gets worse as it fills. When it runs out, it compacts: in my own sessions, a compaction kept 2 to 5% of what was there. So the work can't live in the conversation.
+
+Each session holds one task. When the task ends, I write one line from memory first: what changed, why, what's next. Then Claude writes the hand-off into the workstream's index, and the next task starts fresh from that file. Nothing is lost; the old session is still there.
+
+Writing that first line myself is the point. Recalling something is how you learn it; reading a summary only feels like learning.
 
 ## Me as the orchestrator, AI as the pair
 
 The highest orchestration point in this system is me. I decide what matters, what ships, and what it means.
 
 Claude is my pair. It works inside the vault, so it can read the notes and the repos together. A `CLAUDE.md` file at the root of the brain holds how I think and build, so every session starts from my principles instead of from zero. Every session ends with a [receipt](/writings/the-neurochemical-illusion-of-ai/): one real thing done.
+
+I run several sessions at once, and the bottleneck turned out to be me, not the model: one night I had nine going in the same hour. Now each topic is owned by its index file, not by a session, and I'm learning to steer about three at a time.
 
 This site is an example. In one day of that loop, a lost essay was restored, five essays were rewritten or written, a first visit got about half as heavy (and repeat visits stopped re-downloading 3 MB per page), and every change went live through the pipeline.
 
