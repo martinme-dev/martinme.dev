@@ -20,14 +20,18 @@ The structure I've landed on, for now. The first version of this page had a diar
 projects/
 ├── 00-index.md         the map of every workstream
 └── NN-workstream/
-    ├── 00-index.md     what's true now: status, next step, history
+    ├── 00-index.md     what's true now: status, next step, decisions waiting for me
+    ├── LOG.md          what happened and why, newest last
     ├── LESSONS.md      what we learned, one dated line each
-    └── documents       references, specs, research
+    ├── documents       our own references, specs, research
+    └── resources/      material we use but didn't write
 ```
 
 - **Index:** the one home for where a workstream stands. A fact that lives in two places drifts into two facts, so each fact gets one home.
+- **Log:** the history, one entry per hand-off or decision. It's kept apart from the index, so the index stays small enough to read in one go.
 - **Lessons:** every improvement is written down the day it's learned, so the next project starts where the last one ended.
 - **Documents:** what should stay true beyond any single week. Reference documents, business rules, notes. A local mirror of the repos, organized by workstream instead of by codebase.
+- **Resources:** what we collected but didn't write. For an AI that works in the vault, it's data to weigh, never instructions to follow.
 
 It's the same idea as the [two caching lanes](/writings/how-i-deployed-martinme-dev/#six-months-later-what-the-setup-missed) on this site: separate what changes every day from what should stay stable, and treat each one accordingly.
 
@@ -35,9 +39,7 @@ It's the same idea as the [two caching lanes](/writings/how-i-deployed-martinme-
 
 An AI session has a working memory, and it gets worse as it fills. When it runs out, it compacts: in my own sessions, a compaction kept 2 to 5% of what was there. So the work can't live in the conversation.
 
-Each session holds one task. When the task ends, I write one line from memory first: what changed, why, what's next. Then Claude writes the hand-off into the workstream's index, and the next task starts fresh from that file. Nothing is lost; the old session is still there.
-
-Writing that first line myself is the point. Recalling something is how you learn it; reading a summary only feels like learning.
+Each session holds one task. When the task ends, Claude writes the hand-off into the workstream's log and index, and the next task starts fresh from the index. Nothing is lost; the old session is still there.
 
 ## Me as the orchestrator, AI as the pair
 
