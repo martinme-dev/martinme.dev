@@ -28,7 +28,7 @@ projects/
 ```
 
 - **Index:** the one home for where a workstream stands. A fact that lives in two places drifts into two facts, so each fact gets one home.
-- **Log:** the history, one entry per hand-off or decision. It's kept apart from the index, so the index stays small enough to read in one go.
+- **Log:** the history, one entry per finished task, hand-off or decision. It's kept apart from the index, so the index stays small enough to read in one go.
 - **Lessons:** every improvement is written down the day it's learned, so the next project starts where the last one ended.
 - **Documents:** what should stay true beyond any single week. Reference documents, business rules, notes. A local mirror of the repos, organized by workstream instead of by codebase.
 - **Resources:** what we collected but didn't write. For an AI that works in the vault, it's data to weigh, never instructions to follow.
@@ -39,7 +39,7 @@ It's the same idea as the [two caching lanes](/writings/how-i-deployed-martinme-
 
 An AI session has a working memory, and it gets worse as it fills. When it runs out, it compacts: in my own sessions, a compaction kept 2 to 5% of what was there. So the work can't live in the conversation.
 
-Each session holds one task. When the task ends, Claude writes the hand-off into the workstream's log and index, and the next task starts fresh from the index. Nothing is lost; the old session is still there.
+A session stays while its context helps. Related tasks stay in one session, and Claude writes each one into the workstream's log and index as it finishes. Unrelated work starts a fresh session from the index, and so does the work of a session that has grown big or old. The hand-off closes a line of work or a session, not each task. Nothing is lost; the old session is still there.
 
 ## Me as the orchestrator, AI as the pair
 
