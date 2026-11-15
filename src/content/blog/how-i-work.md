@@ -39,7 +39,7 @@ It's the same idea as the [two caching lanes](/writings/how-i-deployed-martinme-
 
 An AI session has a working memory, and it gets worse as it fills. When it runs out, it compacts: in my own sessions, a compaction kept 2 to 5% of what was there. So the work can't live in the conversation.
 
-A session stays while its context helps. Related tasks stay in one session, and Claude writes each one into the workstream's log and index as it finishes. Unrelated work starts a fresh session from the index, and so does the work of a session that has grown big or old. The hand-off closes a line of work or a session, not each task. Nothing is lost; the old session is still there.
+A session stays while its context helps. Related tasks stay in one session, and Claude writes each one into the workstream's log and index as it finishes. Unrelated work starts a fresh session from the index, and so does the work of a session that has grown big or old. A hand-off moves what the session knows into the workstream's files, so the next session can start from them. It closes a line of work or a session, not each task. Nothing is lost; the old session is still there.
 
 ## Me as the orchestrator, AI as the pair
 
