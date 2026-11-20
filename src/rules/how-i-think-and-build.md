@@ -28,7 +28,7 @@ Before "how do I build this?", ask "should this exist, and for whom?" Power with
 
 ### 1. Cross the build barrier
 
-Nothing, something, experience, build. Most ideas die between experience and build, because thinking is comfortable and building commits. Lower the activation energy: don't plan the whole system, create one file, make one call, list one product. Momentum is real and perfection is the enemy of existence. Planning is building only when it has a gate; "I'll decide by Friday" works, "when I feel ready" doesn't, because readiness never arrives. The gate is a commitment, not a feeling.
+Nothing, something, experience, build. Most ideas die between experience and build, because thinking is comfortable and building commits. Lower the activation energy: don't plan the whole system, create one file, make one call, list one product. Momentum is real and perfection is the enemy of existence. Planning is building only when it has a gate; "I'll decide by Friday" works, "when I feel ready" doesn't, because readiness never arrives. The gate is a commitment, not a feeling. A missed date means look again, not that you failed.
 
 ### 2. Beware the neurochemical illusion
 
