@@ -15,6 +15,41 @@ resource "aws_s3_bucket_public_access_block" "website" {
   restrict_public_buckets = true
 }
 
+# Versioning: a file that a deploy deletes or overwrites can be restored for
+# 30 days. Old versions, and delete markers left with none, then expire.
+resource "aws_s3_bucket_versioning" "website" {
+  bucket = aws_s3_bucket.website.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+resource "aws_s3_bucket_lifecycle_configuration" "website" {
+  bucket = aws_s3_bucket.website.id
+
+  rule {
+    id     = "expire-old-versions"
+    status = "Enabled"
+
+    filter {}
+
+    noncurrent_version_expiration {
+      noncurrent_days = 30
+    }
+
+    expiration {
+      expired_object_delete_marker = true
+    }
+
+    abort_incomplete_multipart_upload {
+      days_after_initiation = 7
+    }
+  }
+
+  depends_on = [aws_s3_bucket_versioning.website]
+}
+
 # =============================================================================
 # CloudFront Origin Access Control — only CloudFront can read from S3
 # =============================================================================
